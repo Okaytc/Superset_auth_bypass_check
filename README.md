@@ -10,6 +10,7 @@ Apahce-Superset身份认证绕过漏洞(CVE-2023-27524)检测工具
 
 开发环境：
 python3
+
 **避免python环境命名导致运行失败，可将python运行程序改为python3添加到环境变量中**
 
 ```python
