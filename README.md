@@ -9,6 +9,8 @@ Apahce-Superset身份认证绕过漏洞(CVE-2023-27524)检测工具
 
 感谢nplookges师傅的反馈
 
+---
+
 开发环境：
 python3
 
@@ -35,6 +37,7 @@ python3
 批量检测：
 ![图片](https://user-images.githubusercontent.com/50813688/234778877-9d797ccd-b4b0-4e72-9dfa-0a90fbaafaac.png)
 
+---
 
 **免责声明**
 
