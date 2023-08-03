@@ -88,9 +88,11 @@ def main():
             for thread in threads_queue:
                 thread.join()
 
-    print("\n存在漏洞列表：")
-    for url in vulurl:
-        print(url+"  [+]漏洞存在！！！")
+    if vulurl:
+        print("\n存在漏洞列表：")
+        for url in vulurl:
+            print(url+"  [+]漏洞存在！！！")
+        print("\ncookie: session="+sessionout)
 
 if __name__ == "__main__":
     main()
