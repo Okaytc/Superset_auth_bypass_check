@@ -1,6 +1,11 @@
 # Superset_auth_bypass_check
 Apahce-Superset身份认证绕过漏洞(CVE-2023-27524)检测工具
 
+
+* 修复由于硬编码session时间过期导致的session失效，引用flask_session_cookie_manager3工具生成实时session进行检测。
+* 修复由于未禁用重定向导致跳转/login/匹配状态码为200的问题
+
+
 **本工具仅用于教育和研究目的，以提高安全意识和改进软件开发实践。在使用本工具之前，请确保您遵守了相关法律法规和道德准则。**
 
 开发环境：
