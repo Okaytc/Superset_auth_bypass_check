@@ -2,7 +2,7 @@
 Apahce-Superset身份认证绕过漏洞(CVE-2023-27524)检测工具
 
 
-修复时间：2023.8.5
+修复时间：2023.8.3
 * 修复由于硬编码session时间过期导致的session失效，引用<a href="https://github.com/noraj/flask-session-cookie-manager">flask_session_cookie_manager</a>工具生成实时session进行检测。
 * 修复由于未禁用重定向导致跳转/login/匹配状态码为200的bug
 
